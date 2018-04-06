@@ -1,6 +1,6 @@
 ---
 
-### PDAL Algorithm Development Deep Dive
+### PDAL Algorithm<br>Development Deep Dive
 #### FOSS4G North America 2018, 16 May 2018
 Bradley J Chambers, Radiant Solutions
 
@@ -8,25 +8,49 @@ Bradley J Chambers, Radiant Solutions
 
 ### Overview
 
-In this talk, we will outline the steps to develop a point cloud filtering
-algorithm using PDAL's Python extension. We will show how PDAL can be installed
-via Conda, and in a Jupyter notebook will work through the algorithm
-development process, showing how the finished algorithm can be distributed and
-executed using the PDAL command line interface.
-
+* PDAL Refresher
 * Conda
 * Jupyter
+* Differential Morphological Profiles Notebook
+* DMP Filter
+
+---
+
+### PDAL Refresher
+
+* Pipeline
+* Translate
+* Python Filter
+
++++
+
+### PDAL Pipeline
+
++++
+
+### PDAL Translate
+
++++
+
+### PDAL Python Filter
 
 ---
 
 ### Conda
 
+* Why Conda?
+
++++
+
+### New Conda Packages
+
 * hexer
 * laz-perf
 * laszip
 * nitro
+* pdal
 
----
++++
 
 ### Environment
 
@@ -52,8 +76,11 @@ dependencies:
   - laszip=3.2.2
   - nitro=2.7.dev2
 ```
+@[4](All of our packages are available in the conda-forge channel)
+@[6-13](This list will vary depending on your needs)
+@[14-18](This will collapse to `- pdal` once the package is available)
 
----
++++
 
 ### Install
 
@@ -61,10 +88,12 @@ dependencies:
 conda env create -f pdalenv.yml
 source activate pdalenv
 ```
-@[1](Create environment according to YAML)
-@[2](Activate the environment)
 
 ---
+
+### Jupyter
+
++++
 
 ### Start
 
@@ -72,11 +101,3 @@ source activate pdalenv
 jupyter notebook
 ```
 
----
-
-### Instead of...
-
-```bash
-docker pull chambbj/pdal-notebook
-docker run -it --init --rm -p 8888:8888 -v $(pwd)/notebooks:/notebooks chambbj/pdal-notebook
-```
