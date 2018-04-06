@@ -252,6 +252,5 @@ def filter(ins, outs):
     ]
 }
 ```
-@[1-10](foo)
-@[11-20](bar)
-@[21-30](baz)
+@[8-17](Imports and variable initialization)
+@[19-34](Inverse Distance Weighting)
